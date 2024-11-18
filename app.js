@@ -2,15 +2,11 @@ const express = require("express");
 const app = express();
 const { routesInit } = require("./routes/config_routes");
 const connectDB = require("./db/mongoConnect");
-const cors = require('cors')
+const cors = require("cors");
 require("dotenv").config();
 
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true 
-}));
+app.use(cors());
 
-//benoson
 app.use(express.json({ limit: "11mb" }));
 
 connectDB();
